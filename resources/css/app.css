@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+    body {
+        @apply bg-surface-100 text-slate-800 font-sans antialiased;
+    }
+}
+
+@layer components {
+    /* Sidebar transition */
+    .sidebar {
+        @apply transition-transform duration-300 ease-in-out;
+    }
+
+    /* Card base */
+    .card {
+        @apply bg-white rounded-xl shadow-card border border-surface-200;
+    }
+
+    /* Badge variants */
+    .badge-available {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-100 text-emerald-800;
+    }
+    .badge-sold {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-rose-100 text-rose-800;
+    }
+    .badge-reserved {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800;
+    }
+    .badge-apartment {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-700;
+    }
+    .badge-villa {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-700;
+    }
+    .badge-office {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700;
+    }
+
+    /* Stat card accent lines */
+    .stat-accent-blue   { @apply border-l-4 border-brand-500; }
+    .stat-accent-emerald{ @apply border-l-4 border-emerald-500; }
+    .stat-accent-amber  { @apply border-l-4 border-amber-500; }
+    .stat-accent-rose   { @apply border-l-4 border-rose-500; }
+
+    /* Nav link */
+    .nav-link {
+        @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium text-slate-600
+               hover:bg-brand-50 hover:text-brand-700 transition-colors duration-150;
+    }
+    .nav-link.active {
+        @apply bg-brand-50 text-brand-700 font-semibold;
+    }
+
+    /* Form input */
+    .form-input {
+        @apply block w-full rounded-lg border border-surface-300 bg-white px-3 py-2 text-sm
+               placeholder-slate-400 shadow-sm
+               focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-200
+               transition-colors duration-150;
+    }
+
+    /* Btn primary */
+    .btn-primary {
+        @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-medium
+               hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-400 focus:ring-offset-1
+               transition-colors duration-150;
+    }
+    .btn-secondary {
+        @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-slate-700 text-sm font-medium
+               border border-surface-300 hover:bg-surface-50 focus:outline-none focus:ring-2 focus:ring-brand-200
+               transition-colors duration-150;
+    }
+    .btn-disabled {
+        @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-100 text-slate-400 text-sm font-medium
+               border border-surface-200 cursor-not-allowed;
+    }
+}
