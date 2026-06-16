@@ -1,3 +1,6 @@
+[variables]
+NIXPACKS_PHP_VERSION = "8.3"
+
 [phases.setup]
 nixPkgs = [
   "php83",
@@ -16,11 +19,11 @@ nixPkgs = [
 
 [phases.install]
 cmds = [
-  "composer install --no-dev --optimize-autoloader --no-scripts --no-interaction",
-  "npm install",
+  "composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs",
+  "npm ci",
   "npm run build",
-  "mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache/data",
-  "chmod -R 775 storage bootstrap/cache"
+  "mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache/data bootstrap/cache",
+  "chmod -R 777 storage bootstrap/cache"
 ]
 
 [start]
