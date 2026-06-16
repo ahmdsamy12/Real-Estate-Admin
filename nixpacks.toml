@@ -14,12 +14,21 @@ nixPkgs = [
   "php83Extensions.dom",
   "php83Extensions.ctype",
   "php83Extensions.zip",
-  "nodejs_20"
+  "nodejs_20",
+  "curl"
+]
+
+[phases.getcomposer]
+dependsOn = ["setup"]
+cmds = [
+  "curl -sS https://getcomposer.org/installer -o composer-setup.php",
+  "php composer-setup.php --install-dir=/usr/local/bin --filename=composer",
+  "rm composer-setup.php"
 ]
 
 [phases.install]
+dependsOn = ["getcomposer"]
 cmds = [
-  "curl -sS https://getcomposer.org/installer | php83 -- --install-dir=/usr/local/bin --filename=composer",
   "composer install --no-dev --optimize-autoloader --no-scripts --no-interaction --ignore-platform-reqs",
   "npm ci",
   "npm run build",
