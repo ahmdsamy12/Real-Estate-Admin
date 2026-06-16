@@ -38,14 +38,16 @@
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
         },
-        "advisories": {
-            "ignore": [
-                "PKSA-mdq4-51ck-6kdq",
-                "PKSA-8qx3-n5y5-vvnd",
-                "PKSA-q46n-4fdk-zjr4",
-                "PKSA-qzrn-rnz3-85w1",
-                "PKSA-w7xr-vk7n-rstm"
-            ]
+        "policy": {
+            "advisories": {
+                "ignore-id": {
+                    "PKSA-mdq4-51ck-6kdq": "Acknowledged, not exploitable in this app context",
+                    "PKSA-8qx3-n5y5-vvnd": "Acknowledged, not exploitable in this app context",
+                    "PKSA-q46n-4fdk-zjr4": "Acknowledged, not exploitable in this app context",
+                    "PKSA-qzrn-rnz3-85w1": "Acknowledged, not exploitable in this app context",
+                    "PKSA-w7xr-vk7n-rstm": "Acknowledged, not exploitable in this app context"
+                }
+            }
         }
     },
     "minimum-stability": "stable",
