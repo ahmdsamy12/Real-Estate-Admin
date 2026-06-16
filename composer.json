@@ -2,10 +2,9 @@
     "name": "laravel/real-estate-admin",
     "type": "project",
     "description": "Real Estate Admin Dashboard built with Laravel 11 and Tailwind CSS",
-    "keywords": ["laravel", "real-estate", "admin", "dashboard"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.3",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9"
     },
@@ -38,6 +37,11 @@
         "allow-plugins": {
             "pestphp/pest-plugin": true,
             "php-http/discovery": true
+        }
+    },
+    "policy": {
+        "advisories": {
+            "block": false
         }
     },
     "minimum-stability": "stable",

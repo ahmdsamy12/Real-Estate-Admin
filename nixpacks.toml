@@ -1,5 +1,6 @@
 [variables]
 NIXPACKS_PHP_VERSION = "8.3"
+COMPOSER_ALLOW_SUPERUSER = "1"
 
 [phases.setup]
 nixPkgs = [
@@ -14,6 +15,8 @@ nixPkgs = [
   "php83Extensions.session",
   "php83Extensions.ctype",
   "php83Extensions.zip",
+  "nodejs_20",
+  "nodePackages.npm",
   "composer"
 ]
 
